@@ -44,7 +44,7 @@ def ccc(request):
         n = row[1]
         t = row[2]
     conn.close()
-    return HttpResponse(n + '-----' + t);
+    return HttpResponse(str(n) + '-----' + str(t));
 
 def db(request):
 

@@ -33,6 +33,15 @@ def sss(request):
     conn.close()
     return HttpResponse(request.POST.get('n',None) + '  ' + request.POST.get('t',None));
 
+@csrf_exempt
+def ccc(request):
+    conn = sqlite3.connect('test.db')
+    c = conn.cursor()
+    cursor = c.execute("SELECT * from COMPANY where ID=1")
+    n = row[1];
+    t = row[2];
+    conn.close()
+    return HttpResponse(n + '-----' + t);
 
 def db(request):
 

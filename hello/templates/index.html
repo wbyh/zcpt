@@ -16,8 +16,16 @@
 	var aud = document.getElementById("aud");
 
 	$( "button" ).click( function( event ) {
-		aud.src="http://mp3.amtb.tw/mp3/02/02-047-000" + n +".mp3";
-		aud.play();
+		$.ajax({
+			 type:"POST",
+			 url:"/sss",
+			 data: {
+					'n': n
+					},
+			 success: function(){
+				 $('button').text('success');
+			 }
+		});
 	} );
 	
 	aud.onended = function() {
@@ -26,11 +34,12 @@
 		aud.src="http://mp3.amtb.tw/mp3/02/02-047-000" + n +".mp3";
 		aud.play();
 	};
-	setInterval(myMethod, 5000);
+	//setInterval(myMethod, 5000);
 
 	function myMethod( )
 	{
 	  $( "button" ).text('第' + n + '集' + '     ' + Math.floor( aud.currentTime ) + '秒');
+
 	}
    } );
   </script>

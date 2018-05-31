@@ -12,14 +12,14 @@
   <script>
   $( function() {
   
-	var n=1;
+	var n=1,t=0;
 	var aud = document.getElementById("aud");
 
 	$( "button" ).click( function( event ) {
 		$.ajax({
 			 type:"POST",
 			 url:"/sss/",
-			 data: {'n': n},
+			 data: {'n': n,'t',t},
 			 success: function(data){
 				 $('button').text(data);
 			 }
@@ -35,8 +35,9 @@
 	//setInterval(myMethod, 5000);
 
 	function myMethod( )
-	{
-	  $( "button" ).text('第' + n + '集' + '     ' + Math.floor( aud.currentTime ) + '秒');
+	{ 
+          t = Math.floor( aud.currentTime );
+	  $( "button" ).text('第' + n + '集' + '     ' + t + '秒');
 
 	}
    } );

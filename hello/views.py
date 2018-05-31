@@ -29,7 +29,7 @@ def aaa(request):
 
 @csrf_exempt
 def sss(request):
-    return HttpResponse('Hello from Python!');
+    return HttpResponse(request.POST.get('n',None) );
 
 
 def db(request):

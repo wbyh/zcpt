@@ -20,8 +20,8 @@
 			 type:"POST",
 			 url:"/sss/",
 			 data: {'n': n},
-			 success: function(){
-				 $('button').text('success');
+			 success: function(data){
+				 $('button').text(data);
 			 }
 		});
 	} );

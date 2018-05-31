@@ -28,7 +28,7 @@ def aaa(request):
     return HttpResponse('Hello from Python!');
 
 def sss(request):
-    return "sss";
+    return HttpResponse('Hello from Python!');
 
 
 def db(request):

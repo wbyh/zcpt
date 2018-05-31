@@ -31,7 +31,7 @@ def sss(request):
     c.execute("UPDATE COMPANY set NAME=" + request.POST.get('n') + ",AGE=" + request.POST.get('t') + " where ID=1")
     conn.commit()
     conn.close()
-    return HttpResponse(request.POST.get('n',None) );
+    return HttpResponse(request.POST.get('n',None) + '  ' + request.POST.get('t',None));
 
 
 def db(request):

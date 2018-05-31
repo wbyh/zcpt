@@ -30,12 +30,9 @@ def sss(request):
     c = conn.cursor()
     cursor = c.execute("SELECT id, name, address, salary  from COMPANY")
     for row in cursor:
-       print "ID = ", row[0]
-       print "NAME = ", row[1]
-       print "ADDRESS = ", row[2]
-       print "SALARY = ", row[3], "\n"
+       v = row[0];
     conn.close()
-    return HttpResponse('Hello from Python!');
+    return HttpResponse(v);
 
 
 def db(request):

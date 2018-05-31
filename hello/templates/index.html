@@ -43,12 +43,12 @@
 		aud.src="http://mp3.amtb.tw/mp3/02/02-047-000" + n +".mp3";
 		aud.play();
 	};
-	//setInterval(myMethod, 5000);
+	setInterval(myMethod, 5000);
 
 	function myMethod( )
 	{ 
           t = Math.floor( aud.currentTime );
-	  $( "button" ).text('第' + n + '集' + '     ' + t + '秒');
+	  $( "#btn1" ).text('第' + n + '集' + '     ' + t + '秒');
 
 	}
    } );

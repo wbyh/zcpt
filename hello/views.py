@@ -28,20 +28,11 @@ def aaa(request):
 def sss(request):
     conn = sqlite3.connect('test.db')
     c = conn.cursor()
-    c.execute("UPDATE COMPANY set NAME=" + request.POST.get('n') + ",AGE=" + request.POST.get('t') + " where ID=1")
+    c.execute("UPDATE COMPANY set NAME=" + request.POST.get('n') + " where ID=1")
     conn.commit()
     conn.close()
     return HttpResponse(request.POST.get('n',None) + '  ' + request.POST.get('t',None));
 
-@csrf_exempt
-def ccc(request):
-    conn = sqlite3.connect('test.db')
-    c = conn.cursor()
-    cursor = c.execute("SELECT * from COMPANY where ID=1")
-    n = row[1];
-    t = row[2];
-    conn.close()
-    return HttpResponse(n + '-----' + t);
 
 def db(request):
 

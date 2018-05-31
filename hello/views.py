@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'index.html')
 
 def sss(request):
-    return 'asdf';
+    return HttpResponse('Hello from Python!');
 
 
 def db(request):

@@ -12,7 +12,7 @@ def index(request):
     #return HttpResponse('Hello from Python!')
     return render(request, 'index.html')
 
-def sss(request):
+def aaa(request):
     conn = sqlite3.connect('test.db')
     c = conn.cursor()
     c.execute('''CREATE TABLE COMPANY

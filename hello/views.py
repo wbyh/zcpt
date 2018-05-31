@@ -38,8 +38,11 @@ def ccc(request):
     conn = sqlite3.connect('test.db')
     c = conn.cursor()
     cursor = c.execute("SELECT * from COMPANY where ID=1")
-    n = row[1];
-    t = row[2];
+    n=0
+    t=0
+    for row in cursor:
+        n = row[1];
+        t = row[2];
     conn.close()
     return HttpResponse(n + '-----' + t);
 

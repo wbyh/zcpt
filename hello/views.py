@@ -3,12 +3,17 @@ from django.http import HttpResponse
 
 from .models import Greeting
 
+
+import sqlite3
+
+
 # Create your views here.
 def index(request):
     #return HttpResponse('Hello from Python!')
     return render(request, 'index.html')
 
 def sss(request):
+    conn = sqlite3.connect('test.db')
     return HttpResponse('Hello from Python!');
 
 

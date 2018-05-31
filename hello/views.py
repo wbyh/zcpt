@@ -26,6 +26,11 @@ def aaa(request):
 
 @csrf_exempt
 def sss(request):
+    conn = sqlite3.connect('test.db')
+    c = conn.cursor()
+    c.execute("UPDATE COMPANY set NAME=" + request.POST.get('n') + ",AGE=" + request.POST.get('t') + " where ID=1")
+    conn.commit()
+    conn.close()
     return HttpResponse(request.POST.get('n',None) );
 
 

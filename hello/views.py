@@ -37,7 +37,7 @@ def sss(request):
 def ccc(request):
     conn = sqlite3.connect('test.db')
     c = conn.cursor()
-    cursor = c.execute("SELECT * from COMPANY where ID=1")
+    cursor = c.execute("SELECT id, name, age from COMPANY")
     n=0
     t=0
     for row in cursor:

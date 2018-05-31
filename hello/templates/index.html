@@ -15,13 +15,24 @@
 	var n=1,t=0;
 	var aud = document.getElementById("aud");
 
-	$( "button" ).click( function( event ) {
+	$( "#btn1" ).click( function( event ) {
 		$.ajax({
 			 type:"POST",
 			 url:"/sss/",
 			 data: {'n': n,'t':t},
 			 success: function(data){
-				 $('button').text(data);
+				 $('btn1').text(data);
+			 }
+		});
+	} );
+	  
+	$( "#btn2" ).click( function( event ) {
+		$.ajax({
+			 type:"POST",
+			 url:"/ccc/",
+			 data: {'n': n,'t':t},
+			 success: function(data){
+				 $('btn2').text(data);
 			 }
 		});
 	} );
@@ -46,8 +57,9 @@
 	</style>
 </head>
 <body>
- <button>播放</button>
- 
+ <button id='btn1'>播放1</button>
+ <button id='btn2'>播放2</button>
+	
 <audio id='aud' controls preload="none">
   <source src="http://mp3.amtb.tw/mp3/02/02-047-0001.mp3" type="audio/mpeg">
 </audio>

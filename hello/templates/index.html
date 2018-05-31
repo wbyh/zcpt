@@ -1,3 +1,48 @@
-<video controls preload="none">
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>amtb</title>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<link href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet">
+<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.js"></script>
+<link href="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.structure.css" rel="stylesheet">
+  <script>
+  $( function() {
+  
+	var n=1;
+	var aud = document.getElementById("aud");
+
+	$( "button" ).click( function( event ) {
+		aud.src="http://mp3.amtb.tw/mp3/02/02-047-000" + n +".mp3";
+		aud.play();
+	} );
+	
+	aud.onended = function() {
+		n++;
+		if (n==10) n=1;
+		aud.src="http://mp3.amtb.tw/mp3/02/02-047-000" + n +".mp3";
+		aud.play();
+	};
+	setInterval(myMethod, 5000);
+
+	function myMethod( )
+	{
+	  $( "button" ).text('第' + n + '集' + '     ' + Math.floor( aud.currentTime ) + '秒');
+	}
+   } );
+  </script>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+ <button>播放</button>
+ 
+<audio id='aud' controls preload="none">
   <source src="http://mp3.amtb.tw/mp3/02/02-047-0001.mp3" type="audio/mpeg">
-</video>
+</audio>
+ 
+</body>
+</html>

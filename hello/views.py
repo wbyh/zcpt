@@ -28,6 +28,7 @@ def aaa(request):
 def sss(request):
     conn = sqlite3.connect('test.db')
     c = conn.cursor()
+    v='aaaaa'
     cursor = c.execute("SELECT id, name, address, salary  from COMPANY")
     for row in cursor:
        v = row[0];

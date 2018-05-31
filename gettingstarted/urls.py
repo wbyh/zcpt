@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^db', hello.views.db, name='db'),
     url(r'^aaa', hello.views.aaa, name='aaa'),
     url(r'^sss', hello.views.sss, name='sss'),
+    url(r'^ccc', hello.views.ccc, name='ccc'),
     path('admin/', admin.site.urls),
 ]

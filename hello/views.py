@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import Greeting
-
+from django.views.decorators.csrf import csrf_exempt
 
 import sqlite3
 
@@ -27,6 +27,7 @@ def aaa(request):
     conn.close()
     return HttpResponse('Hello from Python!');
 
+@csrf_exempt
 def sss(request):
     return HttpResponse('Hello from Python!');
 

@@ -28,14 +28,7 @@ def aaa(request):
     return HttpResponse('Hello from Python!');
 
 def sss(request):
-    conn = sqlite3.connect('test.db')
-    c = conn.cursor()
-    v='aaaaa'
-    cursor = c.execute("SELECT id, name, address, salary  from COMPANY")
-    for row in cursor:
-       v = row[0];
-    conn.close()
-    return HttpResponse(v);
+    return "sss";
 
 
 def db(request):

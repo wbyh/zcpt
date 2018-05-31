@@ -28,7 +28,7 @@ def aaa(request):
 def sss(request):
     conn = sqlite3.connect('test.db')
     c = conn.cursor()
-    c.execute("UPDATE COMPANY set NAME=" + request.POST.get('n') + " where ID=1")
+    c.execute("UPDATE COMPANY set NAME=" + request.POST.get('n',None) + " where ID=1")
     conn.commit()
     conn.close()
     return HttpResponse(request.POST.get('n',None) + '  ' + request.POST.get('t',None));
